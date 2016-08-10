@@ -18,17 +18,17 @@
 # - First drive would be used for ZeroShell, 1GB required
 # - Second drive would be used for temp files, 4GB required
 
-ZEROSHELL="3.2.1"
-KERNEL="3.4.90"
+ZEROSHELL="3.6.0"
+KERNEL="4.6.5"
 
-ZEROSHELL_DISK="/media/xvda"
-INSTALL_DISK="/media/xvdb"
+ZEROSHELL_DISK="/media/sda"
+INSTALL_DISK="/media/sdb"
 LOG="$INSTALL_DISK/install.log"
 ISO_DISK="/media/iso"
 
 KERNEL_FOLDER="linux-$KERNEL"
 KERNEL_FILE="$KERNEL_FOLDER.tar.gz"
-KERNEL_URL="http://www.kernel.org/pub/linux/kernel/v3.x/$KERNEL_FILE"
+KERNEL_URL="http://www.kernel.org/pub/linux/kernel/v4.x/$KERNEL_FILE"
 KERNEL_CONFIG=".config"
 KERNEL_ZEROSHELL_CONFIG="zeroshell.kernel.config"
 
@@ -65,7 +65,7 @@ rsync_progress "Save all the installation files for later reuse" \
 
 echo "Download live CD, continue previous download" | tee --append "$LOG"
 cd "$INSTALL_DISK"
-wget --continue "$ISO_URL"
+wget --no-check-certificate --continue "$ISO_URL"
 
 echo "Mount as read-only partition" | tee --append "$LOG"
 mountpoint "$ISO_DISK" || (mkdir "$ISO_DISK" && mount "$ISO_FILE" "$ISO_DISK") >> "$LOG"
@@ -85,7 +85,7 @@ yes "" | apt-get install --no-upgrade --yes build-essential libncurses5-dev \
 
 echo "Download kernel sources, continue previous download"
 cd "$INSTALL_DISK"
-wget --continue "$KERNEL_URL"
+wget --no-check-certificate --continue "$KERNEL_URL"
 
 untar_progress "Unpack kernel" "$KERNEL_FILE"
 
