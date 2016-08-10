@@ -29,7 +29,7 @@ I would expect that you've read Linode documentation and know the basics.
   7. Grab installation files from github:
     1. apt-get update
     2. apt-get install --yes git
-    3. git -c http.sslVerify=false clone https://github.com/timothybasanov/zeroshell-linode.git
+    3. git -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
     4. cd zeroshell-linode.git
   5. ./install.sh
   6. Wait for several hours... until it's ready
