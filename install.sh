@@ -45,7 +45,7 @@ function rsync_progress() {
 
   echo | tee --append "$LOG"
   echo "$DESCRIPTION" | tee --append "$LOG"
-  rsync --archive --verbose "$FROM" "$TO" | pv --line-mode --size "$LINES" >> "$LOG"
+  rsync --archive "$FROM" "$TO" | pv --line-mode --size "$LINES" >> "$LOG"
 }
 function untar_progress() {
   DESCRIPTION="$1"
@@ -53,7 +53,7 @@ function untar_progress() {
 
   echo | tee --append "$LOG"
   echo "$DESCRIPTION" | tee --append "$LOG"
-  pv "$FILE" | tar --extract --verbose --keep-old-files --gunzip --file - >> "$LOG"
+  pv "$FILE" | tar --extract --keep-old-files --gunzip --file - >> "$LOG"
 }
 
 echo "Make sure that both disks are mounted" | tee --append "$LOG"
