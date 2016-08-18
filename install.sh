@@ -122,8 +122,7 @@ echo "
 timeout 5
 title ZeroShell $ZEROSHELL ($KERNEL with Xen support)
 root (hd0)
-kernel /boot/vmlinuz-$KERNEL-ZS root=/dev/sda quiet init=/bin/init ramdisk_size=131072
-initrd /boot/initrd.img
+kernel /boot/vmlinuz-$KERNEL-ZS root=/dev/sda quiet ro
 " > "$ZEROSHELL_DISK/boot/grub/menu.lst"
 mkdir "$ZEROSHELL_DISK/initrd" || true
 
