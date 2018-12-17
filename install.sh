@@ -18,8 +18,8 @@
 # - First drive would be used for ZeroShell, 1GB required
 # - Second drive would be used for temp files, 4GB required
 
-ZEROSHELL="3.6.0"
-KERNEL="4.4.13"
+ZEROSHELL="3.9.0"
+KERNEL="4.19.9"
 
 ZEROSHELL_DISK="/media/sda"
 INSTALL_DISK="/media/sdb"
@@ -32,7 +32,7 @@ KERNEL_URL="http://www.kernel.org/pub/linux/kernel/v4.x/$KERNEL_FILE"
 KERNEL_CONFIG=".config"
 KERNEL_ZEROSHELL_CONFIG="zeroshell.kernel.config"
 
-ISO_FILE="ZeroShell-$ZEROSHELL.iso"
+ISO_FILE="ZeroShell-$ZEROSHELL-X86.iso"
 ISO_URL="http://www.zeroshell.net/listing/$ISO_FILE"
 
 # Useful scripts to show progress, not portable to other scrips
