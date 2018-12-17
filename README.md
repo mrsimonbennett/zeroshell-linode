@@ -36,7 +36,8 @@ I would expect that you've read Linode documentation and know the basics.
   5. ./install.sh
   6. Wait for several hours... until it's ready
   7. Create new Configuration Profile
-    ```pv-grub-x86-32
+    ```
+    pv-grub-x86-32
     /dev/xvda: ZeroShell
     /dev/xvdb: Profiles
     Root device: /dev/xvda
