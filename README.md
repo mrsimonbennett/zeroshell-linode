@@ -30,8 +30,8 @@ I would expect that you've read Linode documentation and know the basics.
   ```
   apt-get update
   apt-get install --yes git flex bison
-  git clone -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
-  cd zeroshell-linode.git
+  git -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
+  cd zeroshell-linode
   ```
   5. ./install.sh
   6. Wait for several hours... until it's ready
