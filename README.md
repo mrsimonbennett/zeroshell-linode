@@ -27,17 +27,19 @@ I would expect that you've read Linode documentation and know the basics.
   5. Create Profiles ext3/4 disk of at least 1GB (order of creation is important)
   6. Go into the Rescue Mode
   7. Grab installation files from github:
-    1. apt-get update
-    2. apt-get install --yes git
-    3. git -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
-    4. cd zeroshell-linode.git
+  ```
+  apt-get update
+  apt-get install --yes 
+  git -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
+  cd zeroshell-linode.git
   5. ./install.sh
   6. Wait for several hours... until it's ready
   7. Create new Configuration Profile
-    8. pv-grub-x86-32
-    9. /dev/xvda: ZeroShell
-    10. /dev/xvdb: Profiles
-    11. Root device: /dev/xvda
+    ```pv-grub-x86-32
+    /dev/xvda: ZeroShell
+    /dev/xvdb: Profiles
+    Root device: /dev/xvda
+    ```
     12. All Filesystem/Boot Helper knobs enabled
   8. Restart into new configuration and wait for ZeroShell to start in lish console
   9. Go to IP Manager and enable DHCP client: ih<Enter>Enabled<Enter>q
