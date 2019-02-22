@@ -29,7 +29,7 @@ I would expect that you've read Linode documentation and know the basics.
   7. Grab installation files from github:
   ```
   apt-get update
-  apt-get install --yes git flex bison build-essential 
+  apt-get install --yes git flex bison build-essential libssl-dev
   git -c http.sslVerify=false clone https://github.com/mrsimonbennett/zeroshell-linode.git
   cd zeroshell-linode
   ```
